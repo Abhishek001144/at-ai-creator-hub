@@ -3,81 +3,234 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AT AI Creator Hub - Explore creative AI tools for stories, prompts, images and videos.">
-  <meta name="theme-color" content="#080b16">
-  <title>AT AI Creator Hub | All-in-One AI Tools</title>
+  <meta name="description" content="AT AI Creator Hub - Free AI Cartoon & Video Making Tools">
+  <title>AT AI Creator Hub | Free AI Cartoon Maker</title>
   <style>
-    :root{--bg:#080b16;--panel:#11182b;--panel2:#151f37;--text:#f4f7ff;--muted:#aab5ce;--blue:#4da3ff;--purple:#9a6bff;--line:#263452}
-    *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(ellipse at 80% 0%,#20204b 0%,transparent 38%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
-    a{color:inherit;text-decoration:none}
-    .wrap{width:min(1100px,92%);margin:auto}
-    header{position:sticky;top:0;z-index:5;background:#080b16eF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
-    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{font-size:19px;font-weight:800;letter-spacing:.2px}
-    .brand span{color:var(--blue)}
-    nav{display:flex;gap:18px;color:var(--muted);font-size:14px}
-    .hero{padding:76px 0 54px;text-align:center}
-    .tag{display:inline-block;padding:7px 13px;border:1px solid #4d69a2;border-radius:30px;color:#b9caff;background:#172341;font-size:12px;font-weight:700;letter-spacing:1px}
-    h1{font-size:clamp(36px,7vw,64px);line-height:1.08;margin:20px 0 14px}
-    h1 .glow{background:linear-gradient(90deg,#62b7ff,#ad80ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .intro{max-width:650px;margin:0 auto;color:var(--muted);font-size:17px}
-    .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
-    .btn{padding:12px 19px;border-radius:12px;font-weight:700;background:linear-gradient(100deg,#287ee8,#8056e9);box-shadow:0 8px 28px #4b7eff35}
-    .btn.secondary{background:#151e33;border:1px solid var(--line);box-shadow:none}
-    section{padding:34px 0 52px}
-    .section-head{text-align:center;margin-bottom:24px}
-    h2{font-size:30px;margin:0 0 8px}
-    .sub{color:var(--muted);margin:0}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:22px;min-height:178px}
-    .ico{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;font-size:22px;background:#25365d;margin-bottom:14px}
-    .card h3{margin:0 0 7px;font-size:18px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    .soon{display:inline-block;margin-top:14px;color:#a9caff;font-size:11px;font-weight:700;letter-spacing:.8px}
-    .about{max-width:760px;margin:auto;text-align:center;background:#10182b;border:1px solid var(--line);border-radius:20px;padding:28px}
-    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:13px;text-align:center}
-    @media(max-width:720px){nav{gap:11px;font-size:12px}.brand{font-size:16px}.hero{padding:58px 0 38px}.grid{grid-template-columns:1fr 1fr}}
-    @media(max-width:460px){nav a:nth-child(3){display:none}.grid{grid-template-columns:1fr}.card{min-height:0}}
+    :root {
+      --bg: #080b16;
+      --panel: #11182b;
+      --panel2: #151f37;
+      --text: #f4f7ff;
+      --muted: #9ab5ce;
+      --blue: #4da3ff;
+      --purple: #8a6bff;
+      --accent: #00d2ff;
+      --line: rgba(255, 255, 255, 0.08);
+      --box-sizing: border-box;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(ellipse at 50% 0%, #162447 0%, var(--bg) 65%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8, 11, 22, 0.85);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .nav-wrap {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 65px;
+    }
+    .brand { font-size: 20px; font-weight: 700; color: var(--text); }
+    .brand span { color: var(--blue); }
+    nav { display: flex; gap: 20px; font-size: 14px; }
+    nav a { color: var(--muted); transition: 0.2s; }
+    nav a:hover { color: var(--text); }
+
+    .hero { text-align: center; padding: 60px 0 40px; }
+    .tag {
+      display: inline-block; padding: 6px 14px; border: 1px solid rgba(77, 163, 255, 0.3);
+      border-radius: 20px; color: var(--accent); background: rgba(0, 210, 255, 0.08);
+      font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 15px;
+    }
+    .hero h1 { font-size: clamp(30px, 6vw, 52px); font-weight: 800; line-height: 1.2; margin-bottom: 15px; }
+    .hero h1 span {
+      background: linear-gradient(90deg, #4da3ff, #c084fc);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p { color: var(--muted); max-width: 620px; margin: 0 auto 25px; font-size: 16px; }
+
+    /* Steps Section */
+    .steps-box {
+      background: var(--panel); border: 1px solid var(--line);
+      border-radius: 16px; padding: 25px; margin: 20px auto 40px;
+    }
+    .steps-box h3 { margin-bottom: 15px; font-size: 18px; color: var(--accent); }
+    .steps-list {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px; text-align: left;
+    }
+    .step-item {
+      background: var(--panel2); padding: 15px; border-radius: 10px; border: 1px solid var(--line);
+    }
+    .step-num { font-weight: bold; color: var(--blue); margin-bottom: 5px; }
+
+    /* Prompt Box Tool */
+    .prompt-box {
+      background: linear-gradient(135deg, rgba(77, 163, 255, 0.1), rgba(138, 107, 255, 0.1));
+      border: 1px solid rgba(77, 163, 255, 0.3); border-radius: 16px; padding: 25px;
+      margin-bottom: 50px; text-align: left;
+    }
+    .prompt-box input {
+      width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--line);
+      background: #080b16; color: #fff; margin: 10px 0; font-size: 15px;
+    }
+    .prompt-box button {
+      padding: 10px 20px; background: linear-gradient(90deg, #4da3ff, #8a6bff);
+      border: none; border-radius: 8px; color: #fff; font-weight: bold; cursor: pointer;
+    }
+    .result-box {
+      display: none; background: #080b16; padding: 15px; border-radius: 8px;
+      border: 1px dashed var(--blue); margin-top: 15px; font-family: monospace;
+      color: #9ab5ce; font-size: 14px; word-break: break-all;
+    }
+
+    /* Cards Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .card {
+      background: linear-gradient(145deg, var(--panel), var(--panel2));
+      border: 1px solid var(--line); border-radius: 16px; padding: 22px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .card .ico { font-size: 32px; margin-bottom: 12px; }
+    .card h3 { font-size: 20px; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 14px; margin-bottom: 18px; flex-grow: 1; }
+    .btn {
+      display: block; text-align: center; padding: 12px; border-radius: 10px;
+      background: linear-gradient(90deg, #4da3ff, #8a6bff); color: #fff;
+      font-weight: 600; font-size: 14px; transition: 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+
+    footer {
+      border-top: 1px solid var(--line); padding: 30px 0;
+      text-align: center; color: var(--muted); font-size: 13px; margin-top: 60px;
+    }
   </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#home">✦ AT <span>AI</span> Creator Hub</a>
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a><a href="#tools">AI Tools</a><a href="#about">About</a><a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-<main>
-  <section class="hero wrap" id="home">
-    <span class="tag">YOUR CREATIVE AI WORKSPACE</span>
-    <h1>Create More.<br><span class="glow">Imagine Without Limits.</span></h1>
-    <p class="intro">Welcome to AT AI Creator Hub — explore helpful tools for stories, creative prompts, images and video ideas, all in one place.</p>
-    <div class="actions">
-      <a class="btn" href="#tools">Explore AI Tools</a>
-      <a class="btn secondary" href="#about">Learn More</a>
+
+  <header>
+    <div class="wrap nav-wrap">
+      <a href="#" class="brand">✦ AT <span>AI Creator Hub</span></a>
+      <nav>
+        <a href="#workflow">Steps</a>
+        <a href="#prompt-gen">Prompt Tool</a>
+        <a href="#tools">AI Tools</a>
+      </nav>
     </div>
-  </section>
-  <section class="wrap" id="tools">
-    <div class="section-head"><h2>Explore AI Tools</h2><p class="sub">Choose a creative tool to get started.</p></div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <span class="tag">Free Cartoon Studio</span>
+      <h1>Create Cartoon Videos <span>In 3 Easy Steps</span></h1>
+      <p>Story se lekar animation aur voice tak — sabhi free AI tools ka direct setup.</p>
+    </section>
+
+    <!-- 3 Simple Steps -->
+    <section id="workflow" class="steps-box">
+      <h3>🚀 Cartoon Video Kaise Banayein (Full Process)</h3>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">Step 1: Script & Story</div>
+          <p>Apna idea ChatGPT ya Gemini mein daalein aur cartoon video scenes likhwayein.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">Step 2: Voice-Over</div>
+          <p>ElevenLabs par script paste karein aur cute cartoon audio download karein.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">Step 3: Cartoon Video Maker</div>
+          <p>Luma AI ya Kling AI mein prompt daalein aur high quality 3D cartoon video generate karein.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instant Prompt Generator -->
+    <section id="prompt-gen" class="prompt-box">
+      <h3>🪄 1-Click 3D Cartoon Prompt Generator</h3>
+      <p style="color: var(--muted); font-size: 13px;">Bas character ka naam ya action likhein, AI video ke liye exact prompt taiyar ho jayega:</p>
+      <input type="text" id="userInput" placeholder="Jaise: A cute little baby lion running in jungle">
+      <button onclick="createPrompt()">Generate Prompt</button>
+      <div id="output" class="result-box"></div>
+    </section>
+
+    <!-- Main Tools Section -->
+    <h2 id="tools" style="margin-bottom: 20px; font-size: 24px;">Direct Cartoon Tools</h2>
     <div class="grid">
-      <article class="card"><div class="ico">✍️</div><h3>AI Story Generator</h3><p>Create story ideas, scripts and short-video dialogues.</p><span class="soon">COMING SOON</span></article>
-      <article class="card"><div class="ico">🎬</div><h3>AI Video Prompts</h3><p>Prepare scene-by-scene prompts for your video projects.</p><span class="soon">COMING SOON</span></article>
-      <article class="card"><div class="ico">🖼️</div><h3>AI Image Creator</h3><p>Turn your ideas into detailed image prompts.</p><span class="soon">COMING SOON</span></article>
-      <article class="card"><div class="ico">🎨</div><h3>AI Cartoon Maker</h3><p>Explore concepts for colorful cartoon characters.</p><span class="soon">COMING SOON</span></article>
-      <article class="card"><div class="ico">🎙️</div><h3>AI Voice & Text</h3><p>Work with narration drafts and text ideas.</p><span class="soon">COMING SOON</span></article>
-      <article class="card"><div class="ico">💡</div><h3>Creator Ideas</h3><p>Find fresh concepts for Shorts, Reels and videos.</p><span class="soon">COMING SOON</span></article>
+      
+      <!-- Video Maker -->
+      <div class="card">
+        <div>
+          <div class="ico">🎬</div>
+          <h3>AI Cartoon Video Maker</h3>
+          <p>Text aur images se direct 3D animated cartoon clips generate karein.</p>
+        </div>
+        <a href="https://lumalabs.ai/dream-machine" target="_blank" class="btn">Open Luma Video AI ↗</a>
+      </div>
+
+      <!-- Quick Animation -->
+      <div class="card">
+        <div>
+          <div class="ico">🎨</div>
+          <h3>Meta Animated Drawings</h3>
+          <p>Drawing ya sketch upload karein aur 10 second mein cartoon character ko nachayein.</p>
+        </div>
+        <a href="https://sketch.metademolab.com/" target="_blank" class="btn">Open Drawing Animator ↗</a>
+      </div>
+
+      <!-- Voice Maker -->
+      <div class="card">
+        <div>
+          <div class="ico">🎙️</div>
+          <h3>Cartoon Voice Generator</h3>
+          <p>Apni story ke dialogue ke liye realistic cartoon voice create karein.</p>
+        </div>
+        <a href="https://elevenlabs.io/" target="_blank" class="btn">Open ElevenLabs Free ↗</a>
+      </div>
+
+      <!-- Script Generator -->
+      <div class="card">
+        <div>
+          <div class="ico">✍️</div>
+          <h3>Cartoon Story Maker</h3>
+          <p>Shorts aur YouTube videos ke liye scene-by-scene viral story likhein.</p>
+        </div>
+        <a href="https://chatgpt.com/" target="_blank" class="btn">Open Story AI ↗</a>
+      </div>
+
     </div>
-  </section>
-  <section class="wrap" id="about">
-    <div class="about"><h2>About AT AI Creator Hub</h2><p class="sub">A creative space for people who want to make better stories, visuals and videos with the help of AI. New tools and features will be added over time.</p></div>
-  </section>
-  <section class="wrap" id="contact">
-    <div class="section-head"><h2>Contact</h2><p class="sub">For questions or suggestions, add your official email address here before publishing.</p></div>
-  </section>
-</main>
-<footer><div class="wrap">© 2026 AT AI Creator Hub. All rights reserved.</div></footer>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2026 AT AI Creator Hub. Free Video Creation Platform.</p>
+    </div>
+  </footer>
+
+  <script>
+    function createPrompt() {
+      const val = document.getElementById('userInput').value;
+      const out = document.getElementById('output');
+      if(!val.trim()) {
+        alert('Pehle kuch text likhein!');
+        return;
+      }
+      const fullPrompt = "Cute 3D Pixar Disney style animation, " + val + ", vibrant colors, soft lighting, ultra detailed, cinematic 4k render.";
+      out.style.display = 'block';
+      out.innerHTML = "<strong>Copied Prompt for Video AI:</strong><br>" + fullPrompt;
+      navigator.clipboard.writeText(fullPrompt);
+      alert('Prompt copy ho gaya! Ab Video Maker tool mein paste karein.');
+    }
+  </script>
+
 </body>
 </html>
