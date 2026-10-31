@@ -109,6 +109,14 @@
     }
     .btn:hover { opacity: 0.9; }
 
+    /* Special Ad Button */
+    .ad-btn {
+      display: inline-block; margin-top: 15px; padding: 10px 18px;
+      background: rgba(0, 210, 255, 0.15); border: 1px dashed var(--accent);
+      color: var(--accent); border-radius: 8px; font-size: 13px; font-weight: bold;
+    }
+    .ad-btn:hover { background: rgba(0, 210, 255, 0.25); }
+
     footer {
       border-top: 1px solid var(--line); padding: 30px 0;
       text-align: center; color: var(--muted); font-size: 13px; margin-top: 60px;
@@ -160,6 +168,7 @@
       <p style="color: var(--muted); font-size: 13px;">Bas character ka naam ya action likhein, AI video ke liye exact prompt taiyar ho jayega:</p>
       <input type="text" id="userInput" placeholder="Jaise: A cute little baby lion running in jungle">
       <button onclick="createPrompt()">Generate Prompt</button>
+      <a href="https://arapihm.org/4/5d3bf29d816c16f57f07a3afbd69302e" target="_blank" class="ad-btn">🔥 Unlock 50+ Secret 3D Cartoon Prompts (Free) ↗</a>
       <div id="output" class="result-box"></div>
     </section>
 
@@ -197,14 +206,14 @@
         <a href="https://elevenlabs.io/" target="_blank" class="btn">Open ElevenLabs Free ↗</a>
       </div>
 
-      <!-- Script Generator -->
+      <!-- Script Generator (Monetized Smartlink) -->
       <div class="card">
         <div>
           <div class="ico">✍️</div>
           <h3>Cartoon Story Maker</h3>
           <p>Shorts aur YouTube videos ke liye scene-by-scene viral story likhein.</p>
         </div>
-        <a href="https://chatgpt.com/" target="_blank" class="btn">Open Story AI ↗</a>
+        <a href="https://arapihm.org/4/5d3bf29d816c16f57f07a3afbd69302e" target="_blank" class="btn">Open Story AI ↗</a>
       </div>
 
     </div>
@@ -228,6 +237,10 @@
       out.style.display = 'block';
       out.innerHTML = "<strong>Copied Prompt for Video AI:</strong><br>" + fullPrompt;
       navigator.clipboard.writeText(fullPrompt);
+
+      // Opens the Smartlink ad in new tab on prompt generate
+      window.open("https://arapihm.org/4/5d3bf29d816c16f57f07a3afbd69302e", "_blank");
+
       alert('Prompt copy ho gaya! Ab Video Maker tool mein paste karein.');
     }
   </script>
